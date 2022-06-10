@@ -71,7 +71,7 @@ where year(fecha) < 2000
 and trim(nacionalidad) is null;
 
 -- CesarRojas
-select nombre NOM, fecha DATE
+select nombre NOMBRE, fecha FECHA
 from alumnos
 where fecha between '2007-07-07' and '2007-11-11'
 order by fecha;
