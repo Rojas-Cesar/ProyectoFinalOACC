@@ -56,6 +56,20 @@ delete from alumnos where trim(nombre) = '';
 
 delete from alumnos where length(id_alumno) <> 6;
 
+-- CRUD
+-- C
+insert into alumnos values('462985', 'ARMANDO', 'GOMEZ', 'PONCE', '1999-01-01', '');
+-- R
+select * from alumnos
+where year(fecha) < 2000;
+-- U
+update alumnos set nacionalidad = null
+where trim(nacionalidad) = '';
+-- D
+delete from alumnos 
+where year(fecha) < 2000
+and trim(nacionalidad) is null;
+
 
 select * from alumnos;
 
