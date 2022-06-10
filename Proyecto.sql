@@ -70,6 +70,17 @@ delete from alumnos
 where year(fecha) < 2000
 and trim(nacionalidad) is null;
 
+-- CesarRojas
+select nombre NOM, fecha DATE
+from alumnos
+where fecha between '2007-07-07' and '2007-11-11'
+order by fecha;
+
+select count(*) CONTEO
+from (select nombre, fecha
+    from alumnos a
+    where fecha between '2007-07-07' and '2007-11-11') conteo;
+
 
 select * from alumnos;
 
