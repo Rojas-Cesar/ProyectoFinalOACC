@@ -11,9 +11,10 @@ create table if not exists alumnos(
     nombre varchar(50) not null,
     ap_paterno varchar(50) not null,
     ap_materno varchar(50) null,
+    edad null, 
     fecha date null comment 'Fecha de nacimiento',
     nacionalidad varchar(30) default 'Mexicana',
-    primary key(id_alumno)
+    primary key(id_alumno
 );
 
 show tables;
@@ -69,6 +70,28 @@ where trim(nacionalidad) = '';
 delete from alumnos 
 where year(fecha) < 2000
 and trim(nacionalidad) is null;
+
+--Commit
+BEGIN TRY
+begin
+delete from alumnos;
+where edad=null;
+commit;
+end
+
+BEGIN TRY
+begin
+delete from alumnos;
+where nombre=(" ");
+commit;
+end
+
+BEGIN TRY
+begin
+delete from alumnos;
+where nacionalidad =mexicana;
+commit;
+end
 
 -- CesarRojas
 select nombre NOMBRE, fecha FECHA
