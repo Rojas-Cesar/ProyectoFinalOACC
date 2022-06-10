@@ -7,7 +7,7 @@ use oacc2809;
 show tables;
 
 create table if not exists alumnos(
-	id_alumno int not null auto_increment,
+    id_alumno int not null auto_increment,
     nombre varchar(50) not null,
     ap_paterno varchar(50) not null,
     ap_materno varchar(50) null,
